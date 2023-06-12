@@ -1,0 +1,582 @@
+@import "reset.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,500&family=Montserrat:wght@400;500;700&display=swap");
+
+:root {
+  --c-primary-dark: rgb(33, 33, 33);
+  --c-primary-light: rgba(251, 250, 249, 255);
+  --c-lightpink: #fdf5f2;
+}
+
+/*  Global styles */
+html {
+  font-size: 50%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  background-color: var(--c-primary-light);
+  color: var(--c-primary-dark);
+  font-size: 1.6em;
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+}
+/*  End of Global styles */
+
+/* Navigation Bar */
+.masthead {
+  width: 100%;
+  background-color: var(--c-primary-light);
+  z-index: 5;
+  top: 0;
+  position: fixed;
+}
+
+.masthead-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo img {
+  padding-top: 1.2em;
+  width: 100%;
+}
+
+.fa-bars {
+  margin: 2rem 4rem;
+  font-size: 2.5rem;
+  z-index: 2;
+}
+
+.fa-magnifying-glass {
+  margin: 2rem 4rem;
+  font-size: 2.5rem;
+  z-index: 2;
+}
+
+.sidebar-item {
+  margin: 20px;
+  font-size: 2rem;
+  padding: 0.5em 0;
+}
+
+.sidebar {
+  background: var(--c-primary-light);
+  height: 100vh;
+  background-color: hsla(360, 100%, 100%, 0.63);
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 60%;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  padding-top: 10em;
+  transform: translateX(-100%);
+  transition: transform 450ms ease-out;
+}
+
+.sidebar[data-visible="true"] {
+  transform: translateX(0%);
+}
+
+.sidebar-link {
+  text-decoration: none;
+  color: var(--c-primary-dark);
+}
+
+.sidebar-link:visited {
+  color: var(--c-primary-dark);
+}
+
+.search-bar {
+  background: var(--c-primary-light);
+  height: 100vh;
+  background-color: hsla(360, 100%, 100%, 0.63);
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 60%;
+  right: 0;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  padding-top: 10em;
+  transform: translateX(100%);
+  transition: transform 450ms ease-out;
+}
+
+.search-bar input {
+  padding: 1em;
+  width: 70%;
+  border-radius: 100px;
+  border: none;
+  font-size: 1.4rem;
+}
+
+.search-bar[data-visible="true"] {
+  transform: translateX(0%);
+}
+
+.scroll-hidden-nav {
+  width: 70%;
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1em;
+}
+
+.hidden-nav-item:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 650px) {
+  .scroll-hidden-nav {
+    display: none !important;
+  }
+
+  .masthead {
+    height: 6em !important;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .logo img {
+    width: 50vw !important;
+  }
+
+  .fa-bars {
+    font-size: 2.2rem;
+  }
+
+  .fa-magnifying-glass {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-bar,
+  .sidebar {
+    right: 0;
+    left: 0;
+  }
+}
+/* End of Navigation Bar */
+
+/* Homepage */
+.landing-page {
+  margin: auto;
+  width: 100%;
+  margin-top: 10em;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: var(--c-primary-light);
+  background: url("/images/heroImg.jpg") no-repeat center center / cover;
+}
+
+.video-wrap {
+  display: none;
+}
+
+.landing-page-overlay {
+  min-width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--c-primary-dark);
+  opacity: 60%;
+  z-index: 1;
+}
+
+.main-content {
+  padding-top: 1.25em;
+  font-size: 1.5rem;
+  z-index: 2;
+  font-family: "Lora", serif;
+  line-height: 3rem;
+  width: 80%;
+  font-weight: lighter;
+}
+
+.main-content > h1 {
+  font-size: 4.7rem;
+}
+
+.main-content h1 {
+  line-height: 5.5rem;
+  font-size: 4rem;
+  margin-top: 20rem;
+}
+
+.main-content h1 span {
+  font-size: 6rem;
+  font-style: italic;
+}
+
+.main-content h3 {
+  margin-top: 4rem;
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--c-primary-dark);
+}
+
+.down-arrow {
+  position: absolute;
+  top: calc(100vh - 250px);
+  left: 50%;
+  width: 0;
+  height: 40px;
+  border: 1px solid;
+  border-radius: 2px;
+  animation: jumpInfinite 1.5s infinite;
+  margin: 0 auto;
+}
+
+.down-arrow:after {
+  content: " ";
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  width: 17.3px;
+  height: 16px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  border-radius: 4px;
+  transform: rotateZ(45deg);
+  margin: 0 auto;
+}
+
+@keyframes jumpInfinite {
+  0% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: 20px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+.product-category-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.product-title {
+  width: 80%;
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: 0.3rem;
+  margin-bottom: 2.5rem;
+}
+
+.anti-aging-product,
+.product-product,
+.treatment-product {
+  display: grid;
+  grid-template-columns: 100% 0%;
+}
+
+.treatment-product {
+  background-color: var(--c-lightpink);
+}
+
+.product-image {
+  display: none;
+}
+
+.product-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  width: 60%;
+  height: 80%;
+  background-color: rgba(131, 123, 123, 0.2);
+  overflow: hidden;
+  padding-top: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.product-text {
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  width: 80%;
+}
+
+.product-link {
+  padding: 0.5em 1em;
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 2em;
+  border: none;
+  font-size: 1.5rem;
+  background-color: var(--c-primary-dark);
+  color: var(--c-primary-light);
+}
+
+.product-link:hover {
+  background-color: var(--c-primary-light);
+  color: var(--c-primary-dark);
+}
+
+@media screen and (min-width: 1250px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 900px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  @media screen and (min-width: 740px) {
+    .video-wrap {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .video-wrap video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .main-content {
+      padding-top: 10em;
+    }
+
+    .main-content h1 {
+      margin-top: 10rem;
+    }
+
+    .anti-aging-product,
+    .product-product {
+      display: grid;
+      grid-template-columns: 55% 45%;
+    }
+
+    .treatment-product {
+      display: grid;
+      grid-template-columns: 45% 55%;
+    }
+
+    .product-image {
+      display: block;
+      height: 667.55px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .product-content {
+      padding-top: 0;
+    }
+
+    .product-link {
+      margin-bottom: 0;
+    }
+  }
+
+  .product-title {
+    font-size: 2rem;
+  }
+}
+
+@media (orientation: landscape) {
+  .main-content,
+  .main-content h3 > span {
+    padding-top: 0em;
+    font-size: 1.5rem;
+  }
+
+  .main-content > h1 {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (min-device-width: 741px) and (orientation: landscape) {
+  .main-content {
+    padding-top: 4em;
+    font-size: 1.5rem;
+  }
+
+  .main-content > h1 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-device-height: 520px) and (orientation: landscape) {
+  .down-arrow {
+    display: none;
+  }
+}
+/* End of Homepage */
+
+/* Footer */
+footer {
+  height: 10em;
+  border-top: 2px solid var(--c-lightpink);
+}
+
+.navbar-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+  max-width: 1000px;
+  padding: 3em 0;
+  line-height: 1.5em;
+}
+
+.social-media-container {
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+  margin-bottom: 2rem;
+}
+
+.subscribe-text {
+  display: none;
+}
+
+.fa-brands {
+  font-size: 2.25rem;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+  font-size: 1.5rem;
+}
+
+.footer-menu a:hover {
+  text-decoration: underline;
+}
+
+.subscription-form-container {
+  width: 300px;
+  margin-bottom: 2rem;
+}
+
+.subscription-items {
+  border: 1px solid var(--c-lightpink);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.email-box {
+  width: 80%;
+  padding: 0.75em;
+  font-size: 1.5rem;
+  border: 1px solid var(--c-lightpink);
+  border: none;
+}
+
+.email-box:hover {
+  background-color: var(--c-lightpink);
+  border: none;
+  transition: 250ms;
+}
+
+.submit {
+  width: 20%;
+  border: none;
+  background-color: var(--c-primary-dark);
+  color: var(--c-primary-light);
+}
+
+.submit:hover {
+  background-color: var(--c-primary-light);
+  color: var(--c-primary-dark);
+  transition: 250ms;
+}
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+input[type="submit"] {
+  font-size: 1.25rem;
+  width: 20%;
+}
+
+@media screen and (min-width: 850px) {
+  .navbar-wrapper {
+    max-width: 1000px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    line-height: 4em;
+  }
+
+  .subscription-form-container {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .subscribe-text {
+    display: block;
+  }
+
+  .social-media-container,
+  .footer-menu {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .fa-brands,
+  .menu-item {
+    padding: 0 1em;
+  }
+
+  .footer-menu {
+    font-size: 1.65rem;
+  }
+}
+/* End of Footer */
