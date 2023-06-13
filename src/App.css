@@ -34,6 +34,11 @@ body {
   position: fixed;
 }
 
+.masthead.scrolling {
+  height: 5em;
+  transition: 350ms;
+}
+
 .masthead-container {
   margin: 0 auto;
   width: 100%;
@@ -42,47 +47,45 @@ body {
   justify-content: space-between;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
 .logo img {
   padding-top: 1.2em;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
+  transition: width 1s;
 }
 
-.fa-bars {
-  margin: 2rem 4rem;
-  font-size: 2.5rem;
-  z-index: 2;
-}
-
-.fa-magnifying-glass {
-  margin: 2rem 4rem;
-  font-size: 2.5rem;
-  z-index: 2;
-}
-
-.sidebar-item {
-  margin: 20px;
-  font-size: 2rem;
-  padding: 0.5em 0;
+.logo-img.scrolling {
+  width: 25rem;
 }
 
 .sidebar {
-  background: var(--c-primary-light);
-  height: 100vh;
-  background-color: hsla(360, 100%, 100%, 0.63);
-  z-index: 1;
+  padding-top: 15rem;
   position: fixed;
   top: 0;
   left: 0;
-  right: 60%;
-  text-align: center;
+  width: 0;
+  height: 100vh;
+  background-color: hsla(360, 100%, 100%, 0.63);
   backdrop-filter: blur(6px);
-  padding-top: 10em;
-  transform: translateX(-100%);
-  transition: transform 450ms ease-out;
+  z-index: 999;
+  text-align: center;
+  overflow-x: hidden;
+  transition: width 2s ease-out;
 }
 
-.sidebar[data-visible="true"] {
-  transform: translateX(0%);
+.sidebar.open {
+  width: 50vh;
+}
+
+.sidebar-item {
+  margin: 30px;
+  font-size: 2rem;
+  padding: 0.5em 0;
 }
 
 .sidebar-link {
@@ -95,19 +98,22 @@ body {
 }
 
 .search-bar {
-  background: var(--c-primary-light);
-  height: 100vh;
-  background-color: hsla(360, 100%, 100%, 0.63);
-  z-index: 1;
   position: fixed;
   top: 0;
-  left: 60%;
   right: 0;
+  width: 0;
+  height: 100vh;
+  background-color: hsla(360, 100%, 100%, 0.63);
+  z-index: 999;
   text-align: center;
   backdrop-filter: blur(6px);
   padding-top: 10em;
-  transform: translateX(100%);
-  transition: transform 450ms ease-out;
+  overflow-x: hidden;
+  transition: width 0.3s ease-in-out;
+}
+
+.search-bar.open {
+  width: 35vw;
 }
 
 .search-bar input {
@@ -118,17 +124,17 @@ body {
   font-size: 1.4rem;
 }
 
-.search-bar[data-visible="true"] {
-  transform: translateX(0%);
-}
-
 .scroll-hidden-nav {
   width: 70%;
   max-width: 850px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
-  padding-top: 1em;
+  padding-top: 0.75rem;
+}
+
+.scroll-hidden-nav.scrolling {
+  display: none;
 }
 
 .hidden-nav-item:hover {
@@ -149,22 +155,6 @@ body {
   .logo img {
     width: 50vw !important;
   }
-
-  .fa-bars {
-    font-size: 2.2rem;
-  }
-
-  .fa-magnifying-glass {
-    font-size: 2.2rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .search-bar,
-  .sidebar {
-    right: 0;
-    left: 0;
-  }
 }
 /* End of Navigation Bar */
 
@@ -182,7 +172,7 @@ body {
   background: url("/images/heroImg.jpg") no-repeat center center / cover;
 }
 
-.video-wrap {
+.video-wrapper {
   display: none;
 }
 
@@ -287,14 +277,14 @@ a {
   margin-bottom: 2.5rem;
 }
 
-.anti-aging-product,
-.product-product,
-.treatment-product {
+.face-product,
+.lip-product,
+.eye-product {
   display: grid;
   grid-template-columns: 100% 0%;
 }
 
-.treatment-product {
+.eye-product {
   background-color: var(--c-lightpink);
 }
 
@@ -324,7 +314,7 @@ a {
   margin-bottom: 2em;
 }
 
-.product-text {
+.product-intro {
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
   width: 80%;
@@ -364,7 +354,7 @@ a {
   }
 
   @media screen and (min-width: 740px) {
-    .video-wrap {
+    .video-wrapper {
       display: block;
       position: absolute;
       top: 0;
@@ -374,7 +364,7 @@ a {
       overflow: hidden;
     }
 
-    .video-wrap video {
+    .video-wrapper video {
       width: 100vw;
       height: 100vh;
       object-fit: cover;
@@ -388,13 +378,13 @@ a {
       margin-top: 10rem;
     }
 
-    .anti-aging-product,
-    .product-product {
+    .face-product,
+    .lip-product {
       display: grid;
       grid-template-columns: 55% 45%;
     }
 
-    .treatment-product {
+    .eye-product {
       display: grid;
       grid-template-columns: 45% 55%;
     }
@@ -580,3 +570,21 @@ input[type="submit"] {
   }
 }
 /* End of Footer */
+
+/* Error Page */
+.error-container {
+  margin-top: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #bfd5d9;
+}
+/* End of Error Page */
+
+/* Products Page */
+.products-page-wrapper {
+  margin-top: 10em;
+  height: 500px;
+}

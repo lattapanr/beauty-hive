@@ -1,7 +1,11 @@
-import React from "react";
+import Products from "../components/Products";
 
 const FaceProducts = () => {
-  return <div>FaceProducts</div>;
+  return (
+    <main>
+      <Products />
+    </main>
+  );
 };
 
 export default FaceProducts;

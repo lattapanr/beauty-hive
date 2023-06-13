@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../App.css";
 
 const Footer = () => {
@@ -5,15 +6,17 @@ const Footer = () => {
     <footer>
       <section className="navbar-wrapper">
         <section className="social-media-container">
-          <a href="#">
+          <Link to="/" className="sidebar-link">
             <i className="fa-brands fa-facebook" />
-          </a>
-          <a href="#">
+          </Link>
+
+          <Link to="/" className="sidebar-link">
             <i className="fa-brands fa-twitter" />
-          </a>
-          <a href="#">
+          </Link>
+
+          <Link to="/" className="sidebar-link">
             <i className="fa-brands fa-instagram" />
-          </a>
+          </Link>
         </section>
         <section className="subscription-form-container">
           <p className="subscribe-text">Stay updated with our new products!</p>
@@ -29,19 +32,19 @@ const Footer = () => {
         </section>
         <section className="footer-menu">
           <div className="menu-item">
-            <a href="#">
-              <span>Home</span>
-            </a>
+            <Link to="/" className="sidebar-link">
+              Home
+            </Link>
           </div>
           <div className="menu-item">
-            <a href="#">
-              <span>About</span>
-            </a>
+            <Link to="/" className="sidebar-link">
+              About
+            </Link>
           </div>
-          <div className="menu-iten">
-            <a href="#">
-              <span>Blog</span>
-            </a>
+          <div className="menu-item">
+            <Link to="/" className="sidebar-link">
+              Products
+            </Link>
           </div>
         </section>
       </section>

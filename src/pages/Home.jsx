@@ -4,11 +4,13 @@ import HeroImage from "../assets/heroImg.jpg";
 import HeroVideo from "../assets/heroVideo.mp4";
 import LipImage from "../assets/lipImg.jpg";
 
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <>
       <main className="landing-page">
-        <div className="video-wrap">
+        <div className="video-wrapper">
           <video
             type="video/mp4"
             autoPlay=""
@@ -33,33 +35,33 @@ const Home = () => {
         </section>
       </main>
       <section className="product-category-wrapper">
-        <section className="product-post anti-aging-product">
+        <section className="product-post face-product">
           <div className="product-content-wrapper">
             <div className="product-content">
               <h3 className="product-title">Face Makeup</h3>
-              <p className="product-text">
+              <p className="product-intro">
                 Create a flawless canvas with our collection of face makeup.
                 <br />
                 <br />
                 From foundations to concealers and blushes, discover the
                 essentials for a radiant complexion.
               </p>
-              <a href="#" className="product-link">
+              <Link to="face" className="product-link">
                 See products
-              </a>
+              </Link>
             </div>
           </div>
           <img
             className="product-image"
             src={FaceImage}
-            alt="a matured lady hoding a cat"
+            alt="foundation stick being applied to a woman"
           />
         </section>
-        <section className="product-post treatment-product">
+        <section className="product-post eye-product">
           <img
             className="product-image"
             src={EyeImage}
-            alt="a woman getting facial treatment"
+            alt="eye makeup products"
           />
           <div className="product-content-wrapper">
             <div className="product-content">
@@ -71,13 +73,13 @@ const Home = () => {
                 Explore stunning eyeshadows, eyeliners, and mascaras to achieve
                 mesmerizing looks that leave a lasting impression.
               </p>
-              <a href="#" className="product-link">
+              <Link to="eye" className="product-link">
                 See products
-              </a>
+              </Link>
             </div>
           </div>
         </section>
-        <section className="product-post product-product">
+        <section className="product-post lip-product">
           <div className="product-content-wrapper">
             <div className="product-content">
               <h3 className="product-title">Lip Products</h3>
@@ -88,15 +90,15 @@ const Home = () => {
                 Discover an array of shades and finishes that effortlessly
                 elevate your pout and add a pop of color to any look.
               </p>
-              <a href="#" className="product-link">
+              <Link to="lip" className="product-link">
                 See products
-              </a>
+              </Link>
             </div>
           </div>
           <img
             className="product-image"
             src={LipImage}
-            alt="skincare products"
+            alt="a woman applying lipstick"
           />
         </section>
       </section>

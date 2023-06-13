@@ -1,7 +1,11 @@
-import React from "react";
+import Products from "../components/Products";
 
 const EyeProducts = () => {
-  return <div>EyeProducts</div>;
+  return (
+    <main>
+      <Products />
+    </main>
+  );
 };
 
 export default EyeProducts;
