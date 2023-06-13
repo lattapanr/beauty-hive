@@ -11,17 +11,12 @@ const Home = () => {
     <>
       <main className="landing-page">
         <div className="video-wrapper">
-          <video
-            type="video/mp4"
-            autoPlay=""
-            controls=""
-            muted=""
-            playsInline=""
-            loop=""
-            src={HeroVideo}
-            poster={HeroImage}
-          />
+          <video autoPlay controls muted playsInline loop poster={HeroImage}>
+            <source src={HeroVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
+
         <div className="landing-page-overlay" />
         <section className="main-content">
           <h1>
@@ -66,7 +61,7 @@ const Home = () => {
           <div className="product-content-wrapper">
             <div className="product-content">
               <h3 className="product-title">Eye Makeup</h3>
-              <p className="product-text">
+              <p className="product-intro">
                 Accentuate your eyes with our range of captivating eye makeup.
                 <br />
                 <br />
@@ -83,7 +78,7 @@ const Home = () => {
           <div className="product-content-wrapper">
             <div className="product-content">
               <h3 className="product-title">Lip Products</h3>
-              <p className="product-text">
+              <p className="product-intro">
                 Express yourself with our vibrant lipstick collection.
                 <br />
                 <br />
