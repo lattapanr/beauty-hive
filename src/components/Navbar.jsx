@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SlMagnifier, SlMenu } from "react-icons/sl";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -17,6 +17,7 @@ const Navbar = () => {
   };
 
   const [isScrolling, setIsScrolling] = useState(false);
+  const windowSize = useRef(window.innerWidth);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -26,7 +27,9 @@ const Navbar = () => {
   }, []);
 
   const handleScroll = () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollTop =
+      (windowSize > 740 && window.scrollY) ||
+      document.documentElement.scrollTop;
     const isScrolling = scrollTop > 50;
     setIsScrolling(isScrolling);
   };
@@ -36,11 +39,11 @@ const Navbar = () => {
       <nav className={`masthead ${isScrolling ? "scrolling" : ""}`}>
         <div className="masthead-container">
           {/* Hamburger menu */}
-          <div className="icon" onClick={handleSidebarToggle}>
+          <div className="icon-wrapper" onClick={handleSidebarToggle}>
             {isSidebarVisible ? (
-              <AiOutlineClose size={28} />
+              <AiOutlineClose className="icon" />
             ) : (
-              <SlMenu size={28} />
+              <SlMenu className="icon" />
             )}
           </div>
 
@@ -87,11 +90,11 @@ const Navbar = () => {
           </div>
 
           {/* Sidebar search */}
-          <div className="icon" onClick={handleSearchBarToggle}>
+          <div className="icon-wrapper" onClick={handleSearchBarToggle}>
             {isSearchBarVisible ? (
-              <AiOutlineClose size={28} />
+              <AiOutlineClose className="icon" />
             ) : (
-              <SlMagnifier size={28} />
+              <SlMagnifier className="icon" />
             )}
           </div>
         </div>
@@ -103,33 +106,35 @@ const Navbar = () => {
         )}
 
         {/* Hidden nav */}
-        <ul className={`scroll-hidden-nav ${isScrolling ? "scrolling" : ""}`}>
-          <li className="hidden-nav-item">
-            <Link to="/" className="sidebar-link">
-              Home
-            </Link>
-          </li>
-          <li className="hidden-nav-item">
-            <Link to="face" className="sidebar-link">
-              Face Makeup
-            </Link>
-          </li>
-          <li className="hidden-nav-item">
-            <Link to="eye" className="sidebar-link">
-              Eye Makeup
-            </Link>
-          </li>
-          <li className="hidden-nav-item">
-            <Link to="lip" className="sidebar-link">
-              Lip Products
-            </Link>
-          </li>
-          <li className="hidden-nav-item">
-            <Link to="about" className="sidebar-link">
-              About
-            </Link>
-          </li>
-        </ul>
+        <div className="scroll-hidden-nav-wrapper">
+          <ul className={`scroll-hidden-nav ${isScrolling ? "scrolling" : ""}`}>
+            <li className="hidden-nav-item">
+              <Link to="/" className="sidebar-link">
+                Home
+              </Link>
+            </li>
+            <li className="hidden-nav-item">
+              <Link to="face" className="sidebar-link">
+                Face Makeup
+              </Link>
+            </li>
+            <li className="hidden-nav-item">
+              <Link to="eye" className="sidebar-link">
+                Eye Makeup
+              </Link>
+            </li>
+            <li className="hidden-nav-item">
+              <Link to="lip" className="sidebar-link">
+                Lip Products
+              </Link>
+            </li>
+            <li className="hidden-nav-item">
+              <Link to="about" className="sidebar-link">
+                About
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
   );
