@@ -47,7 +47,24 @@ body {
   justify-content: space-between;
 }
 
-.logo {
+.logo img {
+  padding-top: 1.2em;
+  width: 100%;
+}
+
+.logo-img.scrolling {
+  transition: 1s;
+  width: 25rem;
+}
+
+.icon {
+  margin: 3rem 4rem;
+  font-size: 2.5rem;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+/* .logo {
   display: flex;
   justify-content: center;
 }
@@ -61,7 +78,7 @@ body {
 
 .logo-img.scrolling {
   width: 25rem;
-}
+} */
 
 .sidebar {
   padding-top: 15rem;
