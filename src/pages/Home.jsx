@@ -23,27 +23,23 @@ const Home = () => {
             <span>Hey there,</span> <br />
             Come pick your new fav makeup items!
           </h1>
-          <h3>
+          <h2>
             Explore a world of makeup. Discover and shop top-quality cosmetics
-          </h3>
+          </h2>
           <div className="down-arrow" />
         </section>
       </main>
       <section className="product-category-wrapper">
+        <h2>Products</h2>
         <section className="product-post face-product">
           <div className="product-content-wrapper">
             <div className="product-content">
-              <h3 className="product-title">Face Makeup</h3>
+              <Link to="face" className="product-link">
+                Face Makeup
+              </Link>
               <p className="product-intro">
                 Create a flawless canvas with our collection of face makeup.
-                <br />
-                <br />
-                From foundations to concealers and blushes, discover the
-                essentials for a radiant complexion.
               </p>
-              <Link to="face" className="product-link">
-                See products
-              </Link>
             </div>
           </div>
           <img
@@ -60,34 +56,24 @@ const Home = () => {
           />
           <div className="product-content-wrapper">
             <div className="product-content">
-              <h3 className="product-title">Eye Makeup</h3>
+              <Link to="eye" className="product-link">
+                Eye Makeup
+              </Link>
               <p className="product-intro">
                 Accentuate your eyes with our range of captivating eye makeup.
-                <br />
-                <br />
-                Explore stunning eyeshadows, eyeliners, and mascaras to achieve
-                mesmerizing looks that leave a lasting impression.
               </p>
-              <Link to="eye" className="product-link">
-                See products
-              </Link>
             </div>
           </div>
         </section>
         <section className="product-post lip-product">
           <div className="product-content-wrapper">
             <div className="product-content">
-              <h3 className="product-title">Lip Products</h3>
+              <Link to="lip" className="product-link">
+                Lip Products
+              </Link>
               <p className="product-intro">
                 Express yourself with our vibrant lipstick collection.
-                <br />
-                <br />
-                Discover an array of shades and finishes that effortlessly
-                elevate your pout and add a pop of color to any look.
               </p>
-              <Link to="lip" className="product-link">
-                See products
-              </Link>
             </div>
           </div>
           <img

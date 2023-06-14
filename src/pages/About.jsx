@@ -1,18 +1,24 @@
+import { Link } from "react-router-dom";
 import "../App.css";
 
 const About = () => {
   return (
     <main className="about-page-wrapper">
-      <h1>Let's Get to Know What This Page is About!</h1>
+      <div className="about-title">
+        <h1>Let's Get to Know What This Page is About!</h1>
+      </div>
 
-      <h2>What it is</h2>
-      <p>
-        Welcome to this proundly designed, responsive website! This is a beauty
-        lover's dream come true! Here, you'll discover an incredible array of
-        makeup products sourced from the Makeup API. This site boasts a sleek
-        and modern design, making it a delight to explore makeup items for your
-        face, eye, and lips.
-      </p>
+      <div className="about-content">
+        <h2>What it is</h2>
+        <p>
+          Welcome to this proudly designed, responsive website! This is a beauty
+          lover's dream come true! Here, you'll discover an incredible array of
+          makeup products sourced from the{" "}
+          <Link to="http://makeup-api.herokuapp.com/">Makeup API</Link>. This
+          site boasts a sleek and modern design, making it a delight to explore
+          makeup items for your face, eye, and lips.
+        </p>
+      </div>
 
       <h2>What it offers</h2>
       <p>
