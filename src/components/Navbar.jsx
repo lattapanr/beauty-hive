@@ -5,15 +5,15 @@ import { SlMagnifier, SlMenu } from "react-icons/sl";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Navbar = () => {
-  const [isSidebarVisible, setSidebarVisible] = useState(false);
-  const [isSearchBarVisible, setSearchBarVisible] = useState(false);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
 
   const handleSidebarToggle = () => {
-    setSidebarVisible(!isSidebarVisible);
+    setIsSidebarVisible(!isSidebarVisible);
   };
 
   const handleSearchBarToggle = () => {
-    setSearchBarVisible(!isSearchBarVisible);
+    setIsSearchBarVisible(!isSearchBarVisible);
   };
 
   const [isScrolling, setIsScrolling] = useState(false);
@@ -71,27 +71,47 @@ const Navbar = () => {
           {isSidebarVisible ? (
             <ul className={`sidebar ${isSidebarVisible ? "open" : ""}`}>
               <li className="sidebar-item">
-                <Link to="/" className="sidebar-link">
+                <Link
+                  to="/"
+                  className="sidebar-link"
+                  onClick={() => setIsSidebarVisible(false)}
+                >
                   Home
                 </Link>
               </li>
               <li className="sidebar-item">
-                <Link to="face" className="sidebar-link">
+                <Link
+                  to="face"
+                  className="sidebar-link"
+                  onClick={() => setIsSidebarVisible(false)}
+                >
                   Face Makeup
                 </Link>
               </li>
               <li className="sidebar-item">
-                <Link to="eye" className="sidebar-link">
+                <Link
+                  to="eye"
+                  className="sidebar-link"
+                  onClick={() => setIsSidebarVisible(false)}
+                >
                   Eye Makeup
                 </Link>
               </li>
               <li className="sidebar-item">
-                <Link to="lip" className="sidebar-link">
+                <Link
+                  to="lip"
+                  className="sidebar-link"
+                  onClick={() => setIsSidebarVisible(false)}
+                >
                   Lip Products
                 </Link>
               </li>
               <li className="sidebar-item">
-                <Link to="about" className="sidebar-link">
+                <Link
+                  to="about"
+                  className="sidebar-link"
+                  onClick={() => setIsSidebarVisible(false)}
+                >
                   About
                 </Link>
               </li>
