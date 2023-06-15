@@ -1,9 +1,9 @@
-import Products from "../components/Products";
+import ProductCard from "../components/ProductCard";
 
 const LipProducts = () => {
   return (
     <main>
-      <Products />
+      <ProductCard />
     </main>
   );
 };
