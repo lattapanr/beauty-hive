@@ -47,7 +47,27 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Sidebar nav */}
+          {/* Logo */}
+          <div className="logo">
+            <img
+              src={Logo}
+              alt="Beauty Hive logo"
+              className={`logo-img ${isScrolling ? "scrolling" : ""}`}
+            />
+          </div>
+
+          {/* Magnifying menu */}
+          <div className="icon-wrapper" onClick={handleSearchBarToggle}>
+            {isSearchBarVisible ? (
+              <AiOutlineClose className="icon" />
+            ) : (
+              <SlMagnifier className="icon" />
+            )}
+          </div>
+        </div>
+
+        {/* Hidden Sidebar */}
+        <div className="side-bars-wrapper">
           {isSidebarVisible ? (
             <ul className={`sidebar ${isSidebarVisible ? "open" : ""}`}>
               <li className="sidebar-item">
@@ -80,30 +100,12 @@ const Navbar = () => {
             ""
           )}
 
-          {/* Logo */}
-          <div className="logo">
-            <img
-              src={Logo}
-              alt="Beauty Hive logo"
-              className={`logo-img ${isScrolling ? "scrolling" : ""}`}
-            />
-          </div>
-
-          {/* Sidebar search */}
-          <div className="icon-wrapper" onClick={handleSearchBarToggle}>
-            {isSearchBarVisible ? (
-              <AiOutlineClose className="icon" />
-            ) : (
-              <SlMagnifier className="icon" />
-            )}
-          </div>
+          {isSearchBarVisible && (
+            <div className="search-bar open">
+              <input type="text" placeholder="Type to search..." />
+            </div>
+          )}
         </div>
-
-        {isSearchBarVisible && (
-          <div className="search-bar open">
-            <input type="text" placeholder="Type to search..." />
-          </div>
-        )}
 
         {/* Hidden nav */}
         <div className="scroll-hidden-nav-wrapper">

@@ -52,7 +52,7 @@ body {
 }
 
 .masthead.scrolling {
-  height: 5em;
+  height: 5.5em;
   transition: 1.5s;
 }
 
@@ -83,19 +83,23 @@ body {
   cursor: pointer;
 }
 
-.sidebar {
-  padding-top: 15rem;
-  position: fixed;
+.side-bars-wrapper {
+  position: absolute;
   top: 0;
-  left: 0;
-  width: 0;
+  width: 100%;
+}
+
+.sidebar {
   height: 100vh;
+  position: absolute;
+  left: 0;
   background-color: hsla(360, 100%, 100%, 0.63);
   backdrop-filter: blur(6px);
   z-index: 999;
   text-align: center;
+  padding-top: 15rem;
   overflow-x: hidden;
-  transition: width 2s ease-out;
+  transition: 2s ease-out;
 }
 
 .sidebar.open {
@@ -122,10 +126,9 @@ body {
 }
 
 .search-bar {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  width: 0;
   height: 100vh;
   background-color: hsla(360, 100%, 100%, 0.63);
   z-index: 999;
@@ -353,6 +356,7 @@ a {
     width: 70%;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 2rem;
   }
 
   .scroll-hidden-nav.scrolling {
@@ -439,6 +443,10 @@ a {
     width: 60%;
     text-align: center;
   }
+  .about-page-content-wrapper {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 
 .product-title {
@@ -508,19 +516,44 @@ a {
 
 /* Products Page */
 .products-page-wrapper {
-  margin-top: 10em;
+  margin-top: 10rem;
   height: 500px;
 }
 /* End of Product page */
 
 /* About Page */
 .about-page-wrapper {
-  margin-top: 10em;
-  height: 650px;
+  margin-top: 5.5em;
+  background-color: var(--c-light-brown);
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-page-content-wrapper {
+  width: 80%;
+}
+
+.about-title {
+  padding-top: 1.5em;
+  font-family: "Dream Avenue";
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.about-content {
+  margin-top: 4rem;
 }
 
 .about-content a:hover {
   text-decoration: underline;
+}
+
+.about-content-title {
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 /* End of About Page */
 
@@ -534,7 +567,7 @@ footer {
   flex-direction: column;
   width: 100%;
   align-items: center;
-  padding: 3em 0;
+  padding: 2.5rem 0;
   line-height: 1.5em;
 }
 
@@ -644,6 +677,29 @@ input[type="submit"] {
 
   .footer-menu {
     font-size: 1.65rem;
+  }
+
+  .about-content-wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 5rem;
+  }
+
+  .about-title {
+    font-size: 5rem;
+  }
+
+  .about-content {
+    width: 90%;
+  }
+
+  .about-content-title {
+    font-size: 2.25rem;
+  }
+
+  .about-content-text {
+    font-size: 1.65rem;
+    line-height: 2.25rem;
   }
 }
 /* End of Footer */
