@@ -3,24 +3,19 @@ import "../App.css";
 import { HiOutlineStar } from "react-icons/hi";
 import Loader from "./Loader";
 
-const ProductCard = () => {
+const ProductCard = ({ selectedCategory, subCategoryEndpoint }) => {
   const [makeupData, setMakeupData] = useState([]);
-  const [colors, setColors] = useState([]);
-  const [image, setImage] = useState("");
-  const [brand, setBrand] = useState("");
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [rating, setRating] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-
-  const categories = ["all", "foundation", "blush", "bronzer"];
 
   useEffect(() => {
     const fetchMakeupData = async () => {
       try {
-        const url =
-          "http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=foundation&&?product_type=bronzer&&?product_type=blush";
-        const response = await fetch(url);
+        let endpoint = "http://makeup-api.herokuapp.com/api/v1/products.json/";
+        if (selectedCategory !== "all") {
+          endpoint += `?product_type=${selectedCategory}`;
+        }
+
+        const response = await fetch(subCategoryEndpoint);
         const data = await response.json();
 
         setMakeupData(data);
@@ -32,16 +27,10 @@ const ProductCard = () => {
     };
 
     fetchMakeupData();
-  }, []);
+  }, [selectedCategory, subCategoryEndpoint]);
 
   return (
     <section className="products-page-content-container">
-      <div className="sub-category-container">
-        {categories.map((category) => (
-          <button key={category}>{category}</button>
-        ))}
-      </div>
-
       <section className="products-showcase">
         {isLoading ? (
           <Loader />
