@@ -39,7 +39,7 @@ const Navbar = () => {
       <nav className={`masthead ${isScrolling ? "scrolling" : ""}`}>
         <div className="masthead-container">
           {/* Hamburger menu */}
-          <div className="icon-wrapper" onClick={handleSidebarToggle}>
+          <div className="icon-container" onClick={handleSidebarToggle}>
             {isSidebarVisible ? (
               <AiOutlineClose className="icon" />
             ) : (
@@ -57,7 +57,7 @@ const Navbar = () => {
           </div>
 
           {/* Magnifying menu */}
-          <div className="icon-wrapper" onClick={handleSearchBarToggle}>
+          <div className="icon-container" onClick={handleSearchBarToggle}>
             {isSearchBarVisible ? (
               <AiOutlineClose className="icon" />
             ) : (
@@ -67,7 +67,7 @@ const Navbar = () => {
         </div>
 
         {/* Hidden Sidebar */}
-        <div className="side-bars-wrapper">
+        <div className="side-bars-container">
           {isSidebarVisible ? (
             <ul className={`sidebar ${isSidebarVisible ? "open" : ""}`}>
               <li className="sidebar-item">
@@ -128,7 +128,7 @@ const Navbar = () => {
         </div>
 
         {/* Hidden nav */}
-        <div className="scroll-hidden-nav-wrapper">
+        <div className="scroll-hidden-nav-container">
           <ul className={`scroll-hidden-nav ${isScrolling ? "scrolling" : ""}`}>
             <li className="hidden-nav-item">
               <Link to="/" className="sidebar-link">

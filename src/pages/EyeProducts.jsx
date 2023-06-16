@@ -2,7 +2,8 @@ import ProductCard from "../components/ProductCard";
 
 const EyeProducts = () => {
   return (
-    <main>
+    <main className="products-page-container">
+      <h1>Eye Makeup</h1>
       <ProductCard />
     </main>
   );

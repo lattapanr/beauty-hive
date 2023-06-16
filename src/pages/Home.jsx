@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <main className="landing-page">
-        <div className="video-wrapper">
+        <div className="video-container">
           <video autoPlay controls muted playsInline loop poster={HeroImage}>
             <source src={HeroVideo} type="video/mp4" />
             Your browser does not support the video tag.
@@ -29,10 +29,10 @@ const Home = () => {
           <div className="down-arrow" />
         </section>
       </main>
-      <section className="product-category-wrapper">
+      <section className="product-category-container">
         <h2>Products</h2>
         <section className="product-post face-product">
-          <div className="product-content-wrapper">
+          <div className="product-content-container">
             <div className="product-content">
               <Link to="face" className="product-link">
                 Face Makeup
@@ -54,7 +54,7 @@ const Home = () => {
             src={EyeImage}
             alt="eye makeup products"
           />
-          <div className="product-content-wrapper">
+          <div className="product-content-container">
             <div className="product-content">
               <Link to="eye" className="product-link">
                 Eye Makeup
@@ -66,7 +66,7 @@ const Home = () => {
           </div>
         </section>
         <section className="product-post lip-product">
-          <div className="product-content-wrapper">
+          <div className="product-content-container">
             <div className="product-content">
               <Link to="lip" className="product-link">
                 Lip Products

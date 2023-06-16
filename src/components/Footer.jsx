@@ -4,7 +4,7 @@ import "../App.css";
 const Footer = () => {
   return (
     <footer>
-      <section className="footer-wrapper">
+      <section className="footer-container">
         <section className="social-media-container">
           <Link to="/" className="sidebar-link">
             <i className="fa-brands fa-facebook" />

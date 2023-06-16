@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <main className="about-page-wrapper">
-      <div className="about-page-content-wrapper">
+    <main className="about-page-container">
+      <div className="about-page-content-container">
         <div className="about-title">
           <h1>
             Let's Get to <br /> Know This Website!
           </h1>
         </div>
 
-        <section className="about-content-wrapper">
+        <section className="about-content-container">
           <section className="about-content">
             <div className="about-content-title">
               <h2>What It Is:</h2>
