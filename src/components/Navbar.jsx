@@ -17,22 +17,34 @@ const Navbar = () => {
   };
 
   const [isScrolling, setIsScrolling] = useState(false);
-  const windowSize = useRef(window.innerWidth);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const scrollTop =
+        (window.innerWidth > 740 && window.scrollY) ||
+        document.documentElement.scrollTop;
+      const isScrolling = scrollTop > 50;
+      setIsScrolling(isScrolling);
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth > 740) {
+        window.addEventListener("scroll", handleScroll);
+      } else {
+        window.removeEventListener("scroll", handleScroll);
+        setIsScrolling(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize(); // Call handleResize initially to set the appropriate state
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const handleScroll = () => {
-    const scrollTop =
-      (windowSize > 740 && window.scrollY) ||
-      document.documentElement.scrollTop;
-    const isScrolling = scrollTop > 50;
-    setIsScrolling(isScrolling);
-  };
 
   return (
     <header>
@@ -49,11 +61,7 @@ const Navbar = () => {
 
           {/* Logo */}
           <div className="logo">
-            <img
-              src={Logo}
-              alt="Beauty Hive logo"
-              className={`logo-img ${isScrolling ? "scrolling" : ""}`}
-            />
+            <p>Beauty Hive</p>
           </div>
 
           {/* Magnifying menu */}
