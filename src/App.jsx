@@ -13,6 +13,7 @@ import About from "./pages/About";
 import EyeProducts from "./pages/EyeProducts";
 import FaceProducts from "./pages/FaceProducts";
 import LipProducts from "./pages/LipProducts";
+import ProductDetail from "./pages/ProductDetail";
 import Error from "./pages/ErrorPage";
 
 // Components
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
       <Route path="face" element={<FaceProducts />} />
       <Route path="eye" element={<EyeProducts />} />
       <Route path="lip" element={<LipProducts />} />
+      <Route path="product/:id" element={<ProductDetail />} />
       <Route path="*" element={<Error />} />
     </Route>
   )
