@@ -6,10 +6,12 @@ const EyeProducts = () => {
 
   const categories = ["all", "eyebrow", "eyeshadow", "eyeliner", "mascara"];
 
-  const subCategoryEndpoint =
-    selectedCategory === "all"
-      ? "http://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyebrow&&?product_type=eyeshadow&&?product_type=eyeliner&&?product_type=mascara"
-      : `http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=${selectedCategory}`;
+  const subCategoryEndpoint = [
+    "http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=eyebrow",
+    "http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=eyeshadow",
+    "http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=eyeliner",
+    "http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=mascara",
+  ];
 
   return (
     <main className="products-page-container">

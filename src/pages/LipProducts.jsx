@@ -5,10 +5,10 @@ const LipProducts = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const categories = ["all", "lipstick", "lip_liner"];
 
-  const subCategoryEndpoint =
-    selectedCategory === "all"
-      ? "http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=lipstick&&?product_type=lip_liner"
-      : `http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=${selectedCategory}`;
+  const subCategoryEndpoint = [
+    "http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=lipstick",
+    "http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=lip_liner",
+  ];
 
   return (
     <main className="products-page-container">
