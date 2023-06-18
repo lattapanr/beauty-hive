@@ -16,7 +16,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
     "react-paginate": "^8.2.0",
-    "react-router-dom": "6.4"
+    "react-router-dom": "6.4",
+    "scroll-out": "^2.2.12"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
