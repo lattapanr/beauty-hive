@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
-import "../App.css";
-import { HiOutlineStar } from "react-icons/hi";
+import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
 import ReactPaginate from "react-paginate";
-import { Link } from "react-router-dom";
+import ProductCardItem from "../components/ProductCardItem";
+import FavePicks from "../components/FavePicks";
 
 const ProductCard = ({ selectedCategory, subCategoryEndpoint }) => {
   const [makeupData, setMakeupData] = useState([]);
@@ -57,65 +56,28 @@ const ProductCard = ({ selectedCategory, subCategoryEndpoint }) => {
   };
 
   return (
-    <section className="products-page-content-container">
-      <section className="products-showcase">
-        {isLoading ? (
-          <Loader />
-        ) : (
-          currentItems?.map((product) => (
-            <div className="product-card-container" key={product.id}>
-              <Link to={`/product/${product.id}`}>
-                <div className="product-card">
-                  <div className="product-card-color-container">
-                    {product.product_colors.map((color, index) => (
-                      <div
-                        key={`${color.colour_name}+${index}`}
-                        className="product-card-color"
-                        style={{ backgroundColor: `${color.hex_value}` }}
-                      ></div>
-                    ))}
-                  </div>
+    <div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div>
+          <ProductCardItem makeupData={currentItems} />
 
-                  <div className="product-card-image">
-                    <img src={product.api_featured_image} alt={product.name} />
-                  </div>
-
-                  <div className="product-card-detail-container">
-                    <div className="product-card-brand">{product.brand}</div>
-
-                    <div className="product-card-name">{product.name}</div>
-
-                    <div className="product-card-price">${product.price}</div>
-
-                    {product.rating ? (
-                      <div className="product-card-rating">
-                        <HiOutlineStar size={10} />
-                        {product.rating}
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                </div>
-              </Link>
-            </div>
-          ))
-        )}
-      </section>
-
-      <div className="pagination-container">
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel="Next"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={2}
-          pageCount={pageCount}
-          previousLabel="Previous"
-          containerClassName="pagination"
-          activeClassName="active"
-        />
-      </div>
-    </section>
+          <div className="pagination-container">
+            <ReactPaginate
+              breakLabel="..."
+              nextLabel="Next"
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={2}
+              pageCount={pageCount}
+              previousLabel="Previous"
+              containerClassName="pagination"
+              activeClassName="active"
+            />
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
