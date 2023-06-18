@@ -45,7 +45,7 @@ const ProductDetails = () => {
               <h2>{product.brand}</h2>
               <p>${product.price}</p>
               {product.rating ? (
-                <p className="product-card-rating">
+                <p className="product-detail-rating">
                   <HiOutlineStar size={10} />
                   {product.rating}
                 </p>
