@@ -9,7 +9,7 @@ const FavePicks = () => {
     const fetchFavoriteProducts = async () => {
       try {
         const endpoints = favoriteProductIds.map(
-          (id) => `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`
+          (id) => `https://makeup-api.herokuapp.com/api/v1/products/${id}.json`
         );
         const responses = await Promise.all(
           endpoints.map((endpoint) => fetch(endpoint))

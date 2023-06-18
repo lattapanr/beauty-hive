@@ -6,8 +6,8 @@ const LipProducts = () => {
   const categories = ["all", "lipstick", "lip_liner"];
 
   const subCategoryEndpoint = [
-    "http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=lipstick",
-    "http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=lip_liner",
+    "https://makeup-api.herokuapp.com/api/v1/products.json/?product_type=lipstick",
+    "https://makeup-api.herokuapp.com/api/v1/products.json/?product_type=lip_liner",
   ];
 
   return (

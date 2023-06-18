@@ -22,7 +22,7 @@ const About = () => {
                 Welcome to this proudly designed, responsive website! This is a
                 beauty lover's dream come true! Here, you'll discover an
                 incredible array of makeup products sourced from the{" "}
-                <Link to="http://makeup-api.herokuapp.com/">Makeup API</Link>.
+                <Link to="https://makeup-api.herokuapp.com/">Makeup API</Link>.
                 This site boasts a sleek and modern design, making it a delight
                 to explore makeup items for your face, eye, and lips.
               </p>

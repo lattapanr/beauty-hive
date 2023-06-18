@@ -12,7 +12,7 @@ const ProductDetails = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`
+          `https://makeup-api.herokuapp.com/api/v1/products/${id}.json`
         );
         const data = await response.json();
         console.log(data);

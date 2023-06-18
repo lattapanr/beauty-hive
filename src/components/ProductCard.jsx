@@ -20,7 +20,7 @@ const ProductCard = ({ selectedCategory, subCategoryEndpoint }) => {
         endpoints = subCategoryEndpoint;
       } else {
         endpoints = [
-          `http://makeup-api.herokuapp.com/api/v1/products.json/?product_type=${selectedCategory}`,
+          `https://makeup-api.herokuapp.com/api/v1/products.json/?product_type=${selectedCategory}`,
         ];
       }
 
