@@ -294,7 +294,7 @@ a {
 }
 
 .product-category-container h2,
-.recommendation h2 {
+#products h2 {
   font-family: "Dream Avenue", sans-serif;
   font-size: 5rem;
   text-align: center;
