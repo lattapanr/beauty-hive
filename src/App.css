@@ -395,7 +395,7 @@ a {
   transition: 0.3s all ease-out;
 }
 
-.sub-category-container p {
+.sub-category-container button {
   color: black;
 }
 
