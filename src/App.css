@@ -5,7 +5,7 @@
 :root {
   --c-primary-dark: rgb(33, 33, 33);
   --c-primary-light: rgba(251, 250, 249, 255);
-  --c-light-brown: #f3ebeb;
+  --c-light-brown: #ebe7e3;
 }
 
 @font-face {
@@ -57,14 +57,20 @@ body {
 }
 
 .logo {
-  font-family: "Dream Avenue", sans-serif;
-  font-size: 4rem;
-  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
-.logo.scrolling {
+.logo img {
+  padding-top: 1.2em;
+  width: 95%;
+  height: 55%;
+}
+
+.logo-img.scrolling {
   transition: 0.3s ease-in-out;
-  font-size: 5rem;
+  width: 20rem;
+  height: 5rem;
 }
 
 .icon {
@@ -775,6 +781,11 @@ input[type="submit"] {
 
 /* Media Queries */
 @media screen and (min-width: 500px) {
+  .logo img {
+    width: 75%;
+    height: 65%;
+  }
+
   .logo-img.scrolling {
     width: 28rem;
     height: 5rem;

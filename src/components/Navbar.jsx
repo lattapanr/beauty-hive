@@ -61,7 +61,11 @@ const Navbar = () => {
 
           {/* Logo */}
           <div className="logo">
-            <p>Beauty Hive</p>
+            <img
+              src={Logo}
+              alt="Beauty Hive logo"
+              className={`logo-img ${isScrolling ? "scrolling" : ""}`}
+            />
           </div>
 
           {/* Magnifying menu */}
