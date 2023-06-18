@@ -1,10 +1,7 @@
-import EyeImage from "../assets/eyeImg.jpg";
-import FaceImage from "../assets/faceImg.jpg";
 import HeroImage from "../assets/heroImg.jpg";
 import HeroVideo from "../assets/heroVideo.mp4";
-import LipImage from "../assets/lipImg.jpg";
-
-import { Link } from "react-router-dom";
+import Categories from "../components/Categories";
+import FavePicks from "../components/FavePicks";
 
 const Home = () => {
   return (
@@ -29,59 +26,13 @@ const Home = () => {
           <div className="down-arrow" />
         </section>
       </main>
+
+      <section className="recommendation">
+        <FavePicks />
+      </section>
+
       <section className="product-category-container">
-        <h2>Products</h2>
-        <section className="product-post face-product">
-          <div className="product-content-container">
-            <div className="product-content">
-              <Link to="face" className="product-link">
-                Face Makeup
-              </Link>
-              <p className="product-intro">
-                Create a flawless canvas with our collection of face makeup.
-              </p>
-            </div>
-          </div>
-          <img
-            className="product-image"
-            src={FaceImage}
-            alt="foundation stick being applied to a woman"
-          />
-        </section>
-        <section className="product-post eye-product">
-          <img
-            className="product-image"
-            src={EyeImage}
-            alt="eye makeup products"
-          />
-          <div className="product-content-container">
-            <div className="product-content">
-              <Link to="eye" className="product-link">
-                Eye Makeup
-              </Link>
-              <p className="product-intro">
-                Accentuate your eyes with our range of captivating eye makeup.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section className="product-post lip-product">
-          <div className="product-content-container">
-            <div className="product-content">
-              <Link to="lip" className="product-link">
-                Lip Products
-              </Link>
-              <p className="product-intro">
-                Express yourself with our vibrant lipstick collection.
-              </p>
-            </div>
-          </div>
-          <img
-            className="product-image"
-            src={LipImage}
-            alt="a woman applying lipstick"
-          />
-        </section>
+        <Categories />
       </section>
     </>
   );
