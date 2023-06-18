@@ -395,6 +395,10 @@ a {
   transition: 0.3s all ease-out;
 }
 
+.sub-category-container p {
+  color: black;
+}
+
 .products-showcase {
   margin-top: 5rem;
   display: flex;
