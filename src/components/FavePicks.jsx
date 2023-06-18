@@ -1,0 +1,38 @@
+import React, { useEffect, useState } from "react";
+import ProductCardItem from "../components/ProductCardItem";
+
+const FavePicks = () => {
+  const [favoriteProducts, setFavoriteProducts] = useState([]);
+  const favoriteProductIds = [780, 530, 1046];
+
+  useEffect(() => {
+    const fetchFavoriteProducts = async () => {
+      try {
+        const endpoints = favoriteProductIds.map(
+          (id) => `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`
+        );
+        const responses = await Promise.all(
+          endpoints.map((endpoint) => fetch(endpoint))
+        );
+        const data = await Promise.all(
+          responses.map((response) => response.json())
+        );
+        const filteredData = data.filter((product) => product !== null);
+        setFavoriteProducts(filteredData); // Update the favoriteProducts state
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchFavoriteProducts();
+  }, []);
+
+  return (
+    <div id="products">
+      <h2>Favorite Picks</h2>
+      <ProductCardItem makeupData={favoriteProducts} />
+    </div>
+  );
+};
+
+export default FavePicks;
