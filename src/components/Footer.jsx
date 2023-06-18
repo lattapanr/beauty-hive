@@ -42,9 +42,9 @@ const Footer = () => {
             </Link>
           </div>
           <div className="menu-item">
-            <Link to="/" className="sidebar-link">
+            <a href="#products" className="sidebar-link">
               Products
-            </Link>
+            </a>
           </div>
         </section>
       </section>
