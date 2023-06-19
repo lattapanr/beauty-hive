@@ -1044,24 +1044,9 @@ input[type="submit"] {
   }
 }
 
-@media only screen and (max-device-height: 520px) and (orientation: landscape) {
-  .down-arrow {
-    display: none;
-  }
-}
-
-@media only screen and (min-device-width: 741px) and (orientation: landscape) {
-  .main-content {
-    padding-top: 4em;
-    font-size: 1.5rem;
-  }
-
-  .main-content > h1 {
-    font-size: 3rem;
-  }
-
+@media only screen and (min-device-width: 520px) and (orientation: landscape) {
   .main-content p:first-child {
-    padding-top: 0;
+    padding-top: 8rem;
   }
 
   .hero-heading p:first-child {
@@ -1074,5 +1059,11 @@ input[type="submit"] {
 
   .product-category-container h2 {
     padding-bottom: 3rem;
+  }
+}
+
+@media only screen and (max-device-height: 520px) and (orientation: landscape) {
+  .down-arrow {
+    display: none;
   }
 }
