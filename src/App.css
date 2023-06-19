@@ -243,13 +243,20 @@ a {
   overflow: hidden;
 }
 
-.product-category-container h2,
-.home-recommendation h2 {
+.heading {
   font-family: "Dream Avenue", "Montserrat", sans-serif;
   font-size: 7rem;
   text-align: center;
-  padding: 7rem 0;
 }
+
+.home-recommendation .heading h2 {
+  padding: 7rem 0 2rem 0;
+}
+
+.product-category-container .heading h2 {
+  padding: 7rem 0 5rem 0;
+}
+
 .home-category-image-container {
   display: flex;
   justify-content: center;
