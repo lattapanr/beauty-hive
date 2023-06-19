@@ -18,12 +18,12 @@ function Image({ id, src, alt }) {
 
   return (
     <section className="home-category-image-container">
-      <div ref={ref}>
-        <img src={src} alt={alt} className="home-category-image" />
-        <Link to={`${id}`}>
+      <Link to={`${id}`}>
+        <div ref={ref}>
+          <img src={src} alt={alt} className="home-category-image" />
           <motion.h3 style={{ y }}>{`${id} makeup`}</motion.h3>
-        </Link>
-      </div>
+        </div>
+      </Link>
     </section>
   );
 }
