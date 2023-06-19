@@ -8,7 +8,7 @@ const ProductCardCategoryData = ({ selectedCategory, subCategoryEndpoint }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 18;
+  const itemsPerPage = 12;
 
   useEffect(() => {
     const fetchMakeupData = async () => {
