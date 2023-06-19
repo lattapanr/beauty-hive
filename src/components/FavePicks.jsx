@@ -29,7 +29,6 @@ const FavePicks = () => {
 
   return (
     <div id="products">
-      <h2>Favorite Picks</h2>
       <ProductCard makeupData={favoriteProducts} />
     </div>
   );
