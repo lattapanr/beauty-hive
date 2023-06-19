@@ -421,8 +421,8 @@ a {
   display: flex;
   align-self: flex-start;
   flex-wrap: wrap;
-  margin: 0 1.5rem;
-  gap: 0.2rem;
+  margin: 0 1.5rem 2rem 1.5rem;
+  gap: 0.3rem;
 }
 
 .product-card-color {
@@ -832,6 +832,10 @@ input[type="submit"] {
 
   .product-card-container {
     margin-bottom: 0;
+  }
+
+  .product-card-color-container {
+    margin: 0 1.5rem 0 1.5rem;
   }
 
   .product-card {
