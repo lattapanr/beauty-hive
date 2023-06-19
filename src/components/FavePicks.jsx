@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ProductCardItem from "../components/ProductCardItem";
+import ProductCard from "./ProductCard";
 
 const FavePicks = () => {
   const [favoriteProducts, setFavoriteProducts] = useState([]);
@@ -30,7 +30,7 @@ const FavePicks = () => {
   return (
     <div id="products">
       <h2>Favorite Picks</h2>
-      <ProductCardItem makeupData={favoriteProducts} />
+      <ProductCard makeupData={favoriteProducts} />
     </div>
   );
 };
