@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ProductCard from "../components/ProductCard";
+import ProductCategoryData from "../components/ProductCategoryData";
 
 const EyeProducts = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -28,7 +28,7 @@ const EyeProducts = () => {
         ))}
       </div>
 
-      <ProductCard
+      <ProductCategoryData
         subCategoryEndpoint={subCategoryEndpoint}
         selectedCategory={selectedCategory}
       />

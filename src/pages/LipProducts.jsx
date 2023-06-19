@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ProductCard from "../components/ProductCard";
+import ProductCategoryData from "../components/ProductCategoryData";
 
 const LipProducts = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -25,7 +25,7 @@ const LipProducts = () => {
         ))}
       </div>
 
-      <ProductCard
+      <ProductCategoryData
         subCategoryEndpoint={subCategoryEndpoint}
         selectedCategory={selectedCategory}
       />
