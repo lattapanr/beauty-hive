@@ -1040,7 +1040,7 @@ input[type="submit"] {
 
 @media only screen and (min-device-width: 520px) and (orientation: landscape) {
   .main-content p:first-child {
-    padding-top: 6rem;
+    padding-top: 3rem;
   }
 
   .hero-heading p:first-child {
@@ -1048,7 +1048,7 @@ input[type="submit"] {
   }
 
   .home-category-image-container {
-    height: 100vh;
+    height: 100%;
   }
 
   .product-category-container h2 {
