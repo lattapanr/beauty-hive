@@ -27,11 +27,13 @@ const Home = () => {
         </section>
       </main>
 
-      <section className="recommendation">
+      <section className="home-recommendation">
+        <h2>Favorite Picks</h2>
         <FavePicks />
       </section>
 
       <section className="product-category-container">
+        <h2>Products by Categories</h2>
         <Categories />
       </section>
     </>
