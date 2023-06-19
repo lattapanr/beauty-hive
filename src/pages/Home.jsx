@@ -21,7 +21,7 @@ const Home = () => {
             <h1> Come pick your new fav makeup items!</h1>
           </div>
           <p>
-            Explore a world of makeup. Discover and shop top-quality cosmetics
+            Explore a world of makeup. Discover and shop top-quality cosmetics.
           </p>
           <div className="down-arrow" />
         </section>
