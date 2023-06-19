@@ -30,7 +30,6 @@ function Image({ id, src, alt }) {
 const Categories = () => {
   return (
     <section className="home-categories-container">
-      <h2>Products by Categories</h2>
       <Image id="face" src={FaceImage} alt="A face" />
       <Image id="eye" src={EyeImage} alt="An eye" />
       <Image id="lip" src={LipImage} alt="Lips" />
