@@ -1048,3 +1048,9 @@ input[type="submit"] {
     display: inline-block;
   }
 }
+
+@media (orientation: landscape) and (hover: none) and (pointer: coarse) {
+  .down-arrow {
+    display: none;
+  }
+}
