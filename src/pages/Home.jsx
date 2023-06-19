@@ -16,13 +16,13 @@ const Home = () => {
 
         <div className="landing-page-overlay" />
         <section className="main-content">
-          <h1>
-            <span>Hey there,</span> <br />
-            Come pick your new fav makeup items!
-          </h1>
-          <h2>
+          <div className="hero-heading">
+            <p>Hey there,</p>
+            <h1> Come pick your new fav makeup items!</h1>
+          </div>
+          <p>
             Explore a world of makeup. Discover and shop top-quality cosmetics
-          </h2>
+          </p>
           <div className="down-arrow" />
         </section>
       </main>
