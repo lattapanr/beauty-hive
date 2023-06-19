@@ -202,7 +202,7 @@ body {
 }
 
 .hero-heading {
-  font-family: "DreamAvenue", sans-serif;
+  font-family: "DreamAvenue", "Montserrat", sans-serif;
 }
 
 .hero-heading p:first-child {
@@ -267,7 +267,7 @@ a {
 }
 
 .fave-products-container {
-  font-family: "Dream Avenue", sans-serif;
+  font-family: "Dream Avenue", "Montserrat", sans-serif;
   font-size: 5rem;
   text-align: center;
   padding-top: 7rem;
@@ -281,7 +281,7 @@ a {
 
 .product-category-container h2,
 #products h2 {
-  font-family: "Dream Avenue", sans-serif;
+  font-family: "Dream Avenue", "Montserrat", sans-serif;
   font-size: 7rem;
   text-align: center;
   padding-top: 7rem;
@@ -350,7 +350,7 @@ a {
   margin-top: 15rem;
   width: 80%;
   font-size: 5rem;
-  font-family: "Dream Avenue", sans-serif;
+  font-family: "Dream Avenue", "Montserrat", sans-serif;
   margin-bottom: 0.35em;
 }
 
@@ -515,7 +515,7 @@ a {
 }
 
 .product-detail-content h1 {
-  font-family: "Dream Avenue";
+  font-family: "Dream Avenue", "Montserrat", sans-serif;
   margin-top: 14rem;
   font-size: 5rem;
   margin-bottom: 4rem;
@@ -648,7 +648,7 @@ a {
 
 .about-title {
   padding-top: 1.5em;
-  font-family: "Dream Avenue";
+  font-family: "Dream Avenue" "Montserrat", sans-serif;
   font-size: 3.5rem;
   text-align: center;
 }
