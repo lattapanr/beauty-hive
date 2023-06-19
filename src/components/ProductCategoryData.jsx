@@ -3,7 +3,7 @@ import Loader from "./Loader";
 import ReactPaginate from "react-paginate";
 import ProductCard from "./ProductCard";
 
-const ProductCard = ({ selectedCategory, subCategoryEndpoint }) => {
+const ProductCardCategoryData = ({ selectedCategory, subCategoryEndpoint }) => {
   const [makeupData, setMakeupData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -80,4 +80,4 @@ const ProductCard = ({ selectedCategory, subCategoryEndpoint }) => {
   );
 };
 
-export default ProductCard;
+export default ProductCardCategoryData;

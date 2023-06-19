@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineStar } from "react-icons/hi";
 
-const ProductCardItem = ({ makeupData }) => {
+const ProductCard = ({ makeupData }) => {
   return (
     <section className="products-showcase">
       {makeupData.map((product) => (
@@ -45,4 +44,4 @@ const ProductCardItem = ({ makeupData }) => {
   );
 };
 
-export default ProductCardItem;
+export default ProductCard;
