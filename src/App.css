@@ -1053,4 +1053,9 @@ input[type="submit"] {
   .down-arrow {
     display: none;
   }
+
+  .hero-heading p:first-child {
+    font-size: 8rem;
+    margin-top: 5rem;
+  }
 }
