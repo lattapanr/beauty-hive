@@ -280,18 +280,16 @@ a {
 }
 
 .product-category-container h2,
-#products h2 {
+.home-recommendation h2 {
   font-family: "Dream Avenue", "Montserrat", sans-serif;
   font-size: 7rem;
   text-align: center;
-  padding-top: 7rem;
+  padding: 7rem 0;
 }
 .home-category-image-container {
-  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   scroll-snap-align: center;
   perspective: 500px;
 }
@@ -300,8 +298,7 @@ a {
   width: 300px;
   height: 400px;
   position: relative;
-  max-height: 90vh;
-  margin: 20px;
+  margin: 1rem;
   background: var(--white);
   overflow: hidden;
 }
@@ -1030,6 +1027,14 @@ input[type="submit"] {
   .search-bar.open {
     width: 30vw;
   }
+
+  .home-categories-container {
+    display: flex;
+    justify-content: center;
+  }
+  .home-category-image-container {
+    display: inline-block;
+  }
 }
 
 @media (orientation: landscape) {
@@ -1045,13 +1050,5 @@ input[type="submit"] {
 
   .hero-heading p:first-child {
     margin-top: 0rem;
-  }
-
-  .home-category-image-container {
-    height: 100%;
-  }
-
-  .product-category-container h2 {
-    padding-bottom: 3rem;
   }
 }
