@@ -1059,10 +1059,20 @@ input[type="submit"] {
   .main-content > h1 {
     font-size: 3rem;
   }
-}
 
-/* Expirement */
-.home-categories-container {
-  position: relative;
-  height: 100%;
+  .main-content p:first-child {
+    padding-top: 0;
+  }
+
+  .hero-heading p:first-child {
+    margin-top: 0rem;
+  }
+
+  .home-category-image-container {
+    height: 100vh;
+  }
+
+  .product-category-container h2 {
+    padding-bottom: 3rem;
+  }
 }
