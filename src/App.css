@@ -868,6 +868,7 @@ input[type="submit"] {
   }
 
   .down-arrow {
+    display: block;
     position: absolute;
     top: calc(100vh - 250px);
     left: 50%;
