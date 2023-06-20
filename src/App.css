@@ -103,7 +103,6 @@ body {
   padding-top: 15rem;
   overflow-x: hidden;
   width: 0;
-  transition: width 1s ease-out;
 }
 
 .sidebar.open {
@@ -141,7 +140,7 @@ body {
   -webkit-backdrop-filter: blur(6px);
   padding-top: 10em;
   overflow-x: hidden;
-  transition: width 1s ease-out;
+  width: 0;
 }
 
 .search-bar.open {
