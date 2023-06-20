@@ -6,15 +6,27 @@ const Footer = () => {
     <footer>
       <section className="footer-container">
         <section className="social-media-container">
-          <Link to="/" className="sidebar-link">
+          <Link
+            to="/"
+            className="sidebar-link"
+            aria-label="redirect to homepage"
+          >
             <i className="fa-brands fa-facebook" />
           </Link>
 
-          <Link to="/" className="sidebar-link">
+          <Link
+            to="/"
+            className="sidebar-link"
+            aria-label="redirect to homepage"
+          >
             <i className="fa-brands fa-twitter" />
           </Link>
 
-          <Link to="/" className="sidebar-link">
+          <Link
+            to="/"
+            className="sidebar-link"
+            aria-label="redirect to homepage"
+          >
             <i className="fa-brands fa-instagram" />
           </Link>
         </section>
