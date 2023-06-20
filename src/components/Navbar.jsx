@@ -158,7 +158,7 @@ const Navbar = () => {
               />
 
               <div className="search-brands-container">
-                <h3>Search by Brands</h3>
+                <h3>Search by Brand</h3>
                 <div className="brands-container">
                   {brands.map((brand) => (
                     <p key={brand}>{brand}</p>
