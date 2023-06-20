@@ -5,8 +5,8 @@ import FavePicks from "../components/FavePicks";
 
 const Home = () => {
   return (
-    <>
-      <main className="landing-page">
+    <section>
+      <section className="landing-page">
         <div className="video-container">
           <video autoPlay controls muted playsInline loop poster={HeroImage}>
             <source src={HeroVideo} type="video/mp4" />
@@ -25,7 +25,7 @@ const Home = () => {
           </p>
           <div className="down-arrow" />
         </section>
-      </main>
+      </section>
 
       <section className="home-recommendation">
         <div className="heading">
@@ -40,7 +40,7 @@ const Home = () => {
         </div>
         <Categories />
       </section>
-    </>
+    </section>
   );
 };
 
