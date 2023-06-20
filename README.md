@@ -6,6 +6,10 @@ Beauty Hive is a responsive, modern, and minimalistic website that displays make
 
 Check out the live demo of the Beauty Hive website: [https://beauty-hive.vercel.app/](https://beauty-hive.vercel.app/)
 
+https://github.com/lattapanr/beauty-hive/assets/77329731/f32777dd-ea88-42d0-aed9-14a055ac6552
+
+
+
 ## Features
 
 - Search products by brand: Users can search for specific makeup products by entering the brand name in the search bar.
