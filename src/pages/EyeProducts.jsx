@@ -14,7 +14,7 @@ const EyeProducts = () => {
   ];
 
   return (
-    <main className="products-page-container">
+    <section className="products-page-container">
       <h1>Eye Makeup</h1>
       <div className="sub-category-container">
         {categories.map((category) => (
@@ -32,7 +32,7 @@ const EyeProducts = () => {
         subCategoryEndpoint={subCategoryEndpoint}
         selectedCategory={selectedCategory}
       />
-    </main>
+    </section>
   );
 };
 

@@ -3,7 +3,7 @@ import "../App.css";
 
 export default function Error() {
   return (
-    <main className="error-container">
+    <section className="error-container">
       <div className="error-content">
         <h1>404</h1>
         <h2>Sorry, an unexpected error has occurred.</h2>
@@ -22,6 +22,6 @@ export default function Error() {
           <Link to="/">Go to the Homepage</Link>.
         </h3>
       </div>
-    </main>
+    </section>
   );
 }

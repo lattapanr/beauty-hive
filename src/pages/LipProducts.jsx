@@ -11,7 +11,7 @@ const LipProducts = () => {
   ];
 
   return (
-    <main className="products-page-container">
+    <section className="products-page-container">
       <h1>Lip Products</h1>
       <div className="sub-category-container">
         {categories.map((category) => (
@@ -29,7 +29,7 @@ const LipProducts = () => {
         subCategoryEndpoint={subCategoryEndpoint}
         selectedCategory={selectedCategory}
       />
-    </main>
+    </section>
   );
 };
 

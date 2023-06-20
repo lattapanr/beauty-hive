@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <main className="about-page-container">
+    <section className="about-page-container">
       <div className="about-page-content-container">
         <div className="about-title">
           <h1>
@@ -74,7 +74,7 @@ const About = () => {
           </section>
         </section>
       </div>
-    </main>
+    </section>
   );
 };
 

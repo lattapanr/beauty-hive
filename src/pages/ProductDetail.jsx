@@ -5,7 +5,6 @@ import { HiOutlineStar } from "react-icons/hi";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  //const navigate = useNavigate();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -30,7 +29,7 @@ const ProductDetails = () => {
   }
 
   return (
-    <main className="product-detail-container">
+    <section className="product-detail-container">
       <section className="product-detail-content">
         <section className="product-detail-hero">
           <h1>{product.name}</h1>
@@ -101,10 +100,8 @@ const ProductDetails = () => {
             </p>
           </div>
         </section>
-
-        {/* <button onClick={() => navigate(-1)}>go back</button> */}
       </section>
-    </main>
+    </section>
   );
 };
 
