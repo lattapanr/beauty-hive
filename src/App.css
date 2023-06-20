@@ -31,12 +31,12 @@ body {
   height: 100%;
   overflow-x: hidden;
 }
-/*  End of Global styles */
 
 #root {
   max-width: 1100px;
   margin: auto;
 }
+/*  End of Global styles */
 
 /* Navigation Bar */
 .masthead-container {
@@ -152,8 +152,35 @@ body {
   padding: 1em;
   width: 70%;
   border-radius: 100px;
-  border: none;
+  border: 1px solid var(--c-primary-dark);
   font-size: 1.4rem;
+}
+
+.search-brands-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.search-brands-container h3 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.brands-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  gap: 1rem;
+  height: 65vh;
+  overflow-y: scroll;
+}
+
+.brands-container p {
+  padding: 1rem;
+  border: 1px solid var(--c-primary-dark);
 }
 
 .scroll-hidden-nav-container {
@@ -278,12 +305,10 @@ a {
   text-transform: uppercase;
   margin: 0 auto;
   color: black;
-  /* left: calc(50% + 130px); */
   font-size: 3rem;
   max-width: 68%;
   display: flex;
   justify-content: center;
-  /* position: absolute; */
   background-color: hsla(360, 100%, 100%, 0.63);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -303,7 +328,6 @@ a {
 .home-category-image a {
   cursor: pointer;
 }
-
 /* End of Homepage */
 
 /* Products Page */
@@ -378,7 +402,7 @@ a {
 }
 
 .product-card {
-  max-width: 250px;
+  width: 250px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -643,6 +667,37 @@ a {
 }
 /* End of About Page */
 
+/* Search Products */
+.search-product-container {
+  background-color: var(--c-light-brown);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-product-showcase {
+  margin-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-product-showcase h2 {
+  font-family: "DreamAvenue", "Montserrat", sans-serif;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.search-product-showcase h2 span {
+  text-transform: capitalize;
+}
+
+.search-product-showcase p {
+  padding-top: 5rem;
+  font-size: 3rem;
+}
+/* End of Search Products */
+
 /* Footer */
 footer {
   height: 10em;
@@ -750,7 +805,6 @@ input[type="submit"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 5rem;
 }
 
@@ -857,6 +911,7 @@ input[type="submit"] {
   .landing-page {
     margin-top: 15rem;
   }
+
   .video-container {
     display: block;
     position: absolute;
@@ -981,6 +1036,14 @@ input[type="submit"] {
   .product-detail-colors {
     justify-content: flex-end;
   }
+
+  .search-product-showcase {
+    margin-top: 25rem;
+  }
+
+  .search-product-showcase h2 {
+    padding-bottom: 2rem;
+  }
 }
 
 @media screen and (min-width: 850px) {
@@ -1067,3 +1130,4 @@ input[type="submit"] {
     margin-top: 5rem;
   }
 }
+/* End of Media Queries */
