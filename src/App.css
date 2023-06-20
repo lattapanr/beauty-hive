@@ -614,25 +614,32 @@ a {
   width: 80%;
 }
 
-.about-title {
+.about-title h1 {
   padding-top: 1.5em;
-  font-family: "DreamAvenue" "Montserrat", sans-serif;
-  font-size: 3.5rem;
+  font-family: "DreamAvenue", "Montserrat", sans-serif;
+  font-size: 4.5rem;
   text-align: center;
-}
-
-.about-content {
-  margin-top: 4rem;
 }
 
 .about-content a:hover {
   text-decoration: underline;
 }
 
-.about-content-title {
-  font-weight: 500;
-  font-size: 2rem;
+.about-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 1.5rem;
+}
+
+.about-content-title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.about-content {
+  margin-top: 4rem;
+  max-width: 60ch;
 }
 /* End of About Page */
 
@@ -1011,6 +1018,7 @@ input[type="submit"] {
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 5rem;
+    margin-bottom: 0rem;
   }
 
   .about-title {
