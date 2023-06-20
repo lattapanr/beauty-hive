@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { SlMagnifier, SlMenu } from "react-icons/sl";
 import { AiOutlineClose } from "react-icons/ai";
+import { brands } from "../data/brands.js";
 
 const Navbar = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
 
   const handleSidebarToggle = () => {
     setIsSidebarVisible(!isSidebarVisible);
@@ -14,6 +16,10 @@ const Navbar = () => {
 
   const handleSearchBarToggle = () => {
     setIsSearchBarVisible(!isSearchBarVisible);
+
+    if (!isSearchBarVisible) {
+      setSearchValue("");
+    }
   };
 
   const [isScrolling, setIsScrolling] = useState(false);
@@ -85,6 +91,7 @@ const Navbar = () => {
               <li className="sidebar-item">
                 <Link
                   to="/"
+                  aria-label="redirect to homepage"
                   className="sidebar-link"
                   onClick={() => setIsSidebarVisible(false)}
                 >
@@ -134,7 +141,30 @@ const Navbar = () => {
 
           {isSearchBarVisible && (
             <div className="search-bar open">
-              <input type="text" placeholder="Type to search..." />
+              <input
+                type="text"
+                placeholder="Type to search..."
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    // Prevent form submission
+                    e.preventDefault();
+
+                    // Redirect to the search page passing the searchValue as a query parameter
+                    window.location.href = `/search?query=${searchValue}`;
+                  }
+                }}
+              />
+
+              <div className="search-brands-container">
+                <h3>Search by Brands</h3>
+                <div className="brands-container">
+                  {brands.map((brand) => (
+                    <p key={brand}>{brand}</p>
+                  ))}
+                </div>
+              </div>
             </div>
           )}
         </div>
