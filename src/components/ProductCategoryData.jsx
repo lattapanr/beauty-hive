@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
-import ReactPaginate from "react-paginate";
 import ProductCard from "./ProductCard";
+import Pagination from "./Pagination";
 
 const ProductCardCategoryData = ({ selectedCategory, subCategoryEndpoint }) => {
   const [makeupData, setMakeupData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 12;
+  const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
     const fetchMakeupData = async () => {
@@ -31,7 +29,7 @@ const ProductCardCategoryData = ({ selectedCategory, subCategoryEndpoint }) => {
           responses.map((response) => response.json())
         );
         const mergedData = data.flat(); // Merge the data from multiple endpoints into a single array
-        console.log(mergedData);
+
         setMakeupData(mergedData);
         setIsLoading(false);
       } catch (error) {
@@ -43,15 +41,15 @@ const ProductCardCategoryData = ({ selectedCategory, subCategoryEndpoint }) => {
     fetchMakeupData();
   }, [selectedCategory]);
 
-  // Get the current page items based on itemOffset and itemsPerPage
-  const endOffset = itemOffset + itemsPerPage;
-  const currentItems = makeupData.slice(itemOffset, endOffset);
+  // Get the current page items based on current Page and itemsPerPage
+  const itemsPerPage = 12;
+  const offset = currentPage * itemsPerPage;
+  const currentItems = makeupData.slice(offset, offset + itemsPerPage);
   const pageCount = Math.ceil(makeupData.length / itemsPerPage);
 
   // Handle page click
-  const handlePageClick = (event) => {
-    const newOffset = event.selected * itemsPerPage;
-    setItemOffset(newOffset);
+  const handlePageChange = (selectedPage) => {
+    setCurrentPage(selectedPage);
   };
 
   return (
@@ -62,18 +60,7 @@ const ProductCardCategoryData = ({ selectedCategory, subCategoryEndpoint }) => {
         <div>
           <ProductCard makeupData={currentItems} />
 
-          <div className="pagination-container">
-            <ReactPaginate
-              breakLabel="..."
-              nextLabel="Next"
-              onPageChange={handlePageClick}
-              pageRangeDisplayed={2}
-              pageCount={pageCount}
-              previousLabel="Previous"
-              containerClassName="pagination"
-              activeClassName="active"
-            />
-          </div>
+          <Pagination pageCount={pageCount} onPageChange={handlePageChange} />
         </div>
       )}
     </div>
