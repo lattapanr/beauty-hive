@@ -141,24 +141,34 @@ const Navbar = () => {
 
           {isSearchBarVisible && (
             <div className="search-bar open">
-              <input
-                type="text"
-                placeholder="Type to search..."
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    // Prevent form submission
-                    e.preventDefault();
+              <div className="search-input-container">
+                <input
+                  type="text"
+                  placeholder="Type to search..."
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      // Prevent form submission
+                      e.preventDefault();
 
-                    // Redirect to the search page passing the searchValue as a query parameter
+                      // Redirect to the search page passing the searchValue as a query parameter
+                      window.location.href = `/search?query=${searchValue}`;
+                    }
+                  }}
+                />
+                <SlMagnifier
+                  className="search-submit-icon"
+                  size={15}
+                  onClick={() => {
                     window.location.href = `/search?query=${searchValue}`;
-                  }
-                }}
-              />
+                  }}
+                />
+              </div>
 
               <div className="search-brands-container">
                 <h3>Search by Brand</h3>
+                <h4>List of brands:</h4>
                 <div className="brands-container">
                   {brands.map((brand) => (
                     <p key={brand}>{brand}</p>
