@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 
+const favoriteProductIds = [780, 530, 1046];
+
 const FavePicks = () => {
   const [favoriteProducts, setFavoriteProducts] = useState([]);
-  const favoriteProductIds = [780, 530, 1046];
 
   useEffect(() => {
     const fetchFavoriteProducts = async () => {
