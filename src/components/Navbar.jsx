@@ -66,13 +66,15 @@ const Navbar = () => {
           </div>
 
           {/* Logo */}
-          <div className="logo">
-            <img
-              src={Logo}
-              alt="Beauty Hive logo"
-              className={`logo-img ${isScrolling ? "scrolling" : ""}`}
-            />
-          </div>
+          <Link to="/">
+            <div className="logo">
+              <img
+                src={Logo}
+                alt="Beauty Hive logo"
+                className={`logo-img ${isScrolling ? "scrolling" : ""}`}
+              />
+            </div>
+          </Link>
 
           {/* Magnifying menu */}
           <div className="icon-container" onClick={handleSearchBarToggle}>
